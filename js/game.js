@@ -2,17 +2,20 @@ const grid = document.querySelector('.grid');
 const spanPlayer = document.querySelector('.player');
 const timer = document.querySelector('.timer');
 
-const characters = [
-  'beth',
-  'jerry',
-  'jessica',
-  'morty',
-  'pessoa-passaro',
-  'pickle-rick',
-  'rick',
-  'summer',
-  'meeseeks',
-  'scroopy',
+const icons = [
+  'icon1',
+  'icon2',
+  'icon3',
+  'icon4',
+  'icon5',
+  'icon6',
+  'icon7',
+  'icon8',
+  'icon9',
+  'icon10',
+  'icon11',
+  'icon12',
+  'icon13',
 ];
 
 const createElement = (tag, className) => {
@@ -82,25 +85,25 @@ const revealCard = ({ target }) => {
   }
 }
 
-const createCard = (character) => {
+const createCard = (icon) => {
 
   const card = createElement('div', 'card');
   const front = createElement('div', 'face front');
   const back = createElement('div', 'face back');
 
-  front.style.backgroundImage = `url('../images/${character}.png')`;
+  front.style.backgroundImage = `url('../images/${icon}.png')`;
 
   card.appendChild(front);
   card.appendChild(back);
 
   card.addEventListener('click', revealCard);
-  card.setAttribute('data-character', character)
+  card.setAttribute('data-character', icon)
 
   return card;
 }
 
 const loadGame = () => {
-  const duplicateCharacters = [...characters, ...characters];
+  const duplicateCharacters = [...icons, ...icons];
 
   const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
